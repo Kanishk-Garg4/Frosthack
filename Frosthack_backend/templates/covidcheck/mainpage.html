@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+IF you want to know whether you should go for a covid test or not.
+Fill the below form.<br>
+<center>
+<form action="{% url 'checkup' %}" method="post">
+    {% csrf_token %}
+    enter your name:<input type="text" name="name" id="name"><br>
+    Fever:
+    <select name="fever" id="fever">
+        <option value="yes">Yes</option>
+        <option value="no">NO</option>
+    </select>
+    <br>
+    Dry Cough:
+    <select name="dry cough" id="dry cough">
+        <option value="yes">Yes</option>
+        <option value="no">NO</option>
+    </select>
+    <br>
+    Tiredness:
+    <select name="tiredness" id="tiredness">
+        <option value="yes">Yes</option>
+        <option value="no">NO</option>
+    </select>
+    <br>
+
+    how many other symptoms do you have?
+    <input type="number" name="other_symptoms" id="headache">
+    <br>
+
+    <b>Breathing Problem</b><select name="breathing" id="breathing">
+        <option value="yes">Yes</option>
+        <option value="no">No</option>
+    </select>
+    <br>
+    <b>Chest-Pain</b><select name="chest-pain" id="chest-pain">
+        <option value="yes">Yes</option>
+        <option value="no">No</option>
+    </select>
+    <br><br>
+    no of days: <input type="number" name="days" id="days">
+    <br>
+    <input type="submit" value="submit">
+
+</form>
+</center>
+</body>
+</html>
