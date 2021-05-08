@@ -1,0 +1,113 @@
+table{
+    border: 1px solid black;
+    border-radius: 4px;
+    color: white;
+}
+th,td{
+    border: 1px solid black;
+    text-align: center;
+    padding: 10px;
+    color: white;
+}
+table,th,td{
+    border: 3px solid white;
+    border-collapse: collapse;
+    text-align: center;
+    color: white;
+    font-size: larger;
+    /* background-color: #293f50; */
+}
+th{
+    /* background-color: #56db1d; */
+    color: white;
+}
+/* tr:nth-child(even) {
+    background-color: #82e458;
+}
+tr:nth-child(odd) {
+    background-color: #96df77;
+} */
+#particles-js{
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      180deg,
+      #6256ce,
+      #eedd7b
+    );
+    position: relative;
+}
+
+.text {
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%,-50%);
+    color: text;
+    max-width: 90%;
+    /* padding: 2em 3em; */
+    /* background: rgba(0, 0, 0, 0.4); */
+    text-shadow: 0px 0px 2px #131415;
+    font-family: 'Open Sans', sans-serif;
+}
+
+h1 {
+    font-size: 2.25em;
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+input[option]{
+    width: 100px;
+}
+
+.btn {
+    border-radius: 5px;
+    color: black;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 400;
+    letter-spacing: .5px;
+    margin: 0;
+    text-transform: uppercase;
+}
+.btn-default {
+border: 0;
+background: #b5e4da;
+padding: 11px 30px;
+font-size: 14px;
+/* color: white; */
+}
+.btn-default:hover {
+background: #77a198;
+}
+.btn-alt {
+border: 1px solid #fff;
+padding: 10px 30px;
+}
+.btn-alt:hover {
+background: #fff;
+color: #648880;
+}
+
+input[option]{
+    color: black;
+    display: block;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(198, 201, 204);
+    border-image: initial;
+    border-radius: 5px;
+    margin: 5px 0px 27px;
+    padding: 5px 8px;
+}
+.register-group input,
+.register-group textarea {
+  border: 1px solid #c6c9cc;
+  border-radius: 5px;
+  color: black;
+  display: block;
+  font-size: 25px;
+  height: 50px;
+  /* margin: 5px 0 27px 0; */
+  /* padding: 5px 8px; */
+}
