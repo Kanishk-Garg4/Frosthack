@@ -32,14 +32,15 @@ def checkup(request):
             breathing = False
 
         patient = Check.objects.create(
-            name=name,
+            name=name, phone=phone_number,
             cough=dry_cough, fever=fever, Tiredness=tiredness,
             chest_pain=chest_pain, breathing_problem=breathing,
-            other_symptoms=other_symptoms, date=timezone.now())
+            other_symptoms=other_symptoms, date=timezone.now()
+        )
         if Check.is_severe(patient):
             patient.save()
             display = "you need to get tested"
-            return HttpResponseRedirect(reverse('checkpage', {'display': display, 'patient': patient}))
+            return render(request, 'covidcheck/checkpage.html', {'display': display})
         else:
             display = "You seem to be fine"
         return render(request, 'covidcheck/mainpage.html', {'display': display})

@@ -54,9 +54,8 @@
                         <li>Hosted at The Chicago Theatre, a historical landmark</li>
                         <li>August in Chicago is simply amazing</li> -->
                     </ul>
-                </section>
-<!--                <form class="col-1-3" action="#" method="post">-->
-<!--            <fieldset class="register-group">-->
+                </section><form class="col-1-3" action="#" method="post">
+            <fieldset class="register-group">
             <!-- <label>
                 Name
                 <input type="text" name="name" placeholder="Full name" required>
@@ -69,8 +68,8 @@
                 Contact Number(to get a call from a doctor)
                 <input type="tel" name="Contact No." pattern="[0-9]{10}" maxlength="10" placeholder="Contact No." required>
             </label> -->
-            <form action="{% url 'checkup' %}" class="col-1-3"  method="post">
-                 <fieldset class="register-group">
+
+                     <form action="{% url 'checkup' %}"   method="post">
                  {% csrf_token %}
                 Enter your name:<input type="text" name="name" id="name" required>
                 Fever:
@@ -106,8 +105,8 @@
                      Phone number
                 <input type="tel" name="phone" id="phone" maxlength="10" pattern="[0-9]{10}" required>
                 <input type="submit" value="submit">
-                 </fieldset>
-            </form>
+                 </form>
+
             <!-- <label>
             Number of Passes
             <select name="quantity" required>
@@ -123,8 +122,8 @@
             <textarea name="comments"></textarea>
             </label>
             </fieldset>
-            <input class="btn btn-default" type="submit" name="submit" value="Purchase">
-            </form> -->
+            <input class="btn btn-default" type="submit" name="submit" value="Purchase">-->
+                </form>
             </div>
         </section>
 
