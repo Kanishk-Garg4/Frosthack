@@ -50,7 +50,7 @@ table {
 
 body {
   background: #293f50;
-  color: #888;
+  /* color: #888; */
   font: 300 16px/22px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
@@ -220,9 +220,12 @@ p a {
   ========================================
 */
 
+input[option]{
+  width: 100px;
+}
 .btn {
   border-radius: 5px;
-  color: #fff;
+  color: black;
   cursor: pointer;
   display: inline-block;
   font-weight: 400;
@@ -232,9 +235,10 @@ p a {
 }
 .btn-default {
   border: 0;
-  background: #648880;
+  background: #b5e4da;
   padding: 11px 30px;
   font-size: 14px;
+  /* color: white; */
 }
 .btn-default:hover {
   background: #77a198;
@@ -305,6 +309,7 @@ p a {
   display: inline-block;
   margin: 0 10px;
   vertical-align: top;
+  color: #888;
 }
 .nav li:last-child {
   margin-right: 0;
@@ -397,16 +402,15 @@ textarea {
   font: 300 16px/22px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 .register-group label {
-  color: #648880;
+  color: black;
   cursor: pointer;
   font-weight: 400;
 }
 .register-group input,
-.register-group select,
 .register-group textarea {
   border: 1px solid #c6c9cc;
   border-radius: 5px;
-  color: #888;
+  color: black;
   display: block;
   margin: 5px 0 27px 0;
   padding: 5px 8px;
@@ -421,4 +425,14 @@ textarea {
 }
 .register-group textarea {
   height: 78px;
+}
+
+.register-group select{
+  border: 1px solid #c6c9cc;
+  border-radius: 5px;
+  color: #888;
+  display: block;
+  margin: 5px 0 27px 0;
+  padding: 5px 8px;
+  width: 64px;
 }
