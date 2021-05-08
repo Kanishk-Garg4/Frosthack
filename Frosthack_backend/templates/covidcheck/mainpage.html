@@ -1,54 +1,140 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Home</title>
-</head>
-<body>
-IF you want to know whether you should go for a covid test or not.
-Fill the below form.<br>
-<center>
-<form action="{% url 'checkup' %}" method="post">
-    {% csrf_token %}
-    enter your name:<input type="text" name="name" id="name"><br>
-    Fever:
-    <select name="fever" id="fever">
-        <option value="yes">Yes</option>
-        <option value="no">NO</option>
-    </select>
-    <br>
-    Dry Cough:
-    <select name="dry cough" id="dry cough">
-        <option value="yes">Yes</option>
-        <option value="no">NO</option>
-    </select>
-    <br>
-    Tiredness:
-    <select name="tiredness" id="tiredness">
-        <option value="yes">Yes</option>
-        <option value="no">NO</option>
-    </select>
-    <br>
+    <head>
+        <meta charset="utf-8">
+        <title>Covid-Response</title>
+        <link rel="stylesheet" href="{% static 'main.css' %}">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,400">
+    </head>
+    <body>
 
-    how many other symptoms do you have?
-    <input type="number" name="other_symptoms" id="headache">
-    <br>
+<!-- <section class="lesson-link">
+    <a href="/html-css/building-forms/">&larr; Return to Learn to Code HTML &amp; CSS Lesson 10, &#8220;<span>Building Forms</span>&#8220;</a>
+    <link href="//cloud.typography.com/6623692/607644/css/fonts.css" rel="stylesheet">
+    <style type="text/css">.lesson-link{background:#42444e;border-bottom:1px solid #31333a;font:14px/24px "Whitney SSm A","Whitney SSm B","Lucida Grande","Lucida Sans",Verdana,Helvetica,Arial,sans-serif;padding:10px 30px 9px 30px;}.lesson-link a{color:#9799a7;text-decoration:none;}.lesson-link a:hover span{color:#fff;}</style>
+    <script>var _gaq=_gaq||[];_gaq.push(['_setAccount','UA-3738010-2']);_gaq.push(['_trackPageview']);(function(){var ga=document.createElement('script');ga.type='text/javascript';ga.async=true;ga.src=('https:'==document.location.protocol?'https://ssl':'http://www')+'.google-analytics.com/ga.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(ga,s)})();</script>
+</section> -->
 
-    <b>Breathing Problem</b><select name="breathing" id="breathing">
-        <option value="yes">Yes</option>
-        <option value="no">No</option>
-    </select>
-    <br>
-    <b>Chest-Pain</b><select name="chest-pain" id="chest-pain">
-        <option value="yes">Yes</option>
-        <option value="no">No</option>
-    </select>
-    <br><br>
-    no of days: <input type="number" name="days" id="days">
-    <br>
-    <input type="submit" value="submit">
 
-</form>
-</center>
-</body>
+        <header class="primary-header container group">
+            <h1 class="logo">
+                <img src="{% static 'logo.jpg' %}" alt="It was logo" height="180">
+            <!-- <a href="index.html">Styles <br> Conference</a> -->
+            </h1>
+            <!-- <h3 class="tagline">August 24&ndash;26th &mdash; Chicago, IL</h3> -->
+            <nav class="nav primary-nav" style="padding-top: 110px;">
+                <ul>
+                    <li>Here reference links will come</li>
+                <!-- <li><a href="code.html">Home</a></li><li><a href=""></a></li><li><a href="schedule.html">Schedule</a></li><li><a href="venue.html">Venue</a></li><li><a href="register.html">Register</a></li> -->
+                </ul>
+            </nav>
+        </header>
+
+        <section class="introduction">
+            <div class="lead container">
+                <h1>Welcome!</h1>
+                <p>Good to see you.</p>
+                <p>Our aim is to provide you most suitable advice as per your given health conditions.</p>
+            </div>
+        </section>
+
+        <section class="row">
+            <div class="grid">
+
+                <section class="col-2-3">
+                    <h2>Why is there a need to check?</h2>
+                    <!-- <h5>$99 per Pass</h5> -->
+                    <p>COVID-19 being one of the most fatal disease in this century, it is essential to checkup regularly and take right decisions at right time.</p>
+                    <p>So, here are we providing you the most suitable advice as per your provided health conditions.</p>
+                    <h4>How to check?</h4>
+                    <ul class="why-attend">
+                        <li>Here all steps will come</li>
+                        <!-- <li>One full day of workshops and two full days of presentations</li>
+                        <li>Hosted at The Chicago Theatre, a historical landmark</li>
+                        <li>August in Chicago is simply amazing</li> -->
+                    </ul>
+                </section><form class="col-1-3" action="#" method="post">
+            <fieldset class="register-group">
+            <!-- <label>
+                Name
+                <input type="text" name="name" placeholder="Full name" required>
+            </label>
+            <label>
+                Email
+                <input type="email" name="email" placeholder="Email address" required>
+            </label>
+            <label >
+                Contact Number(to get a call from a doctor)
+                <input type="tel" name="Contact No." pattern="[0-9]{10}" maxlength="10" placeholder="Contact No." required>
+            </label> -->
+
+                     <form action="{% url 'checkup' %}"   method="post">
+                 {% csrf_token %}
+                Enter your name:<input type="text" name="name" id="name" required>
+                Fever:
+                <select name="fever" id="fever">
+                    <option value="no">No</option>
+                    <option value="yes">Yes</option>
+                </select>
+
+                Dry Cough:
+                <select name="dry cough" id="dry cough">
+                    <option value="no">No</option>
+                    <option value="yes">Yes</option>
+                </select>
+
+                Tiredness:
+                <select name="tiredness" id="tiredness">
+                    <option value="no">No</option>
+                    <option value="yes">Yes</option>
+                </select>
+
+                <b>Breathing Problem</b><select name="breathing" id="breathing">
+                    <option value="no">No</option>
+                    <option value="yes">Yes</option>
+                </select>
+
+                <b>Chest-Pain</b><select name="chest-pain" id="chest-pain">
+                    <option value="no">No</option>
+                    <option value="yes">Yes</option>
+                </select>
+
+                 How many other symptoms do you have?
+                <input type="number" name="other_symptoms" id="headache" required pattern="[0-4]{1}" maxlength="1">
+                     Phone number
+                <input type="tel" name="phone" id="phone" maxlength="10" pattern="[0-9]{10}" required>
+                <input type="submit" value="submit">
+                 </form>
+
+            <!-- <label>
+            Number of Passes
+            <select name="quantity" required>
+            <option value="1" selected>1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            </select>
+            </label> -->
+            <!-- <label>
+            Comments
+            <textarea name="comments"></textarea>
+            </label>
+            </fieldset>
+            <input class="btn btn-default" type="submit" name="submit" value="Purchase">-->
+                </form>
+            </div>
+        </section>
+
+        <footer class="primary-footer container group">
+            <small>&copy; Covid-Response</small>
+            <nav class="nav">
+                <ul>
+                    <!-- <li><a href="index.html">Home</a></li><li><a href="speakers.html">Speakers</a></li><li><a href="schedule.html">Schedule</a></li><li><a href="venue.html">Venue</a></li><li><a href="register.html">Register</a></li> -->
+                    <li>Here links will come.</li>
+                </ul>
+            </nav>
+        </footer>
+    </body>
 </html>

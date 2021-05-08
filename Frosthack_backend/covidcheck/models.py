@@ -10,9 +10,11 @@ class Check(models.Model):
     fever = models.BooleanField(default=False)
     cough = models.BooleanField(default=False)
     Tiredness = models.BooleanField(default=False)
-    _other_symptoms = models.IntegerField(default=0, db_column='other_symptoms')
     breathing_problem = models.BooleanField(default=False)
     chest_pain = models.BooleanField(default=False)
+    _other_symptoms = models.IntegerField(default=0, db_column='other_symptoms')
+    date = models.DateTimeField('date_published')
+    phone = models.IntegerField('phone_number')
 
     @property
     def other_symptoms(self):
@@ -42,3 +44,25 @@ class Check(models.Model):
 
         else:
             return False
+
+class PinCity(models.Model):
+
+    def __str__(self):
+        return self.name
+
+    city = models.CharField(max_length=200)
+    _pin = models.IntegerField(default=0, db_column='pin')
+    name = models.CharField(max_length=200)
+    locality = models.CharField(max_length=200)
+
+    @property
+    def pin(self):
+        return self._pin
+
+    @pin.setter
+    def pin(self, value):
+        self._pin = self._pin + value - value
+
+    def is_valid(self):
+        if 100000 < self.pin < 1000000:
+            return True
