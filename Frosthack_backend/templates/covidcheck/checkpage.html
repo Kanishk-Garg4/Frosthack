@@ -1,17 +1,48 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Checkpage</title>
+    <link rel="stylesheet" href="{% static 'checkpage.css' %}">
+
 </head>
 <body>
-
-{{display}}
-{% if messages %}
-{% enter your number if you wish co connect to us for any queries. we will call you shortly %}
-{% below is the list of covid centres around you %}
-
-{% endif %}
-
+    <div id="particles-js"></div>
+    <div class="text">
+        <p style="color: white; font-size: larger;">Unfortunately, you are suspected to be covid positive :(<br> To know about nearest covid test centers, please enter your PIN:-</p>
+        <section class="register-group">
+            <form action="{% url 'askpin' %}" method="post">
+                {% csrf_token %}
+            <input type="number" maxlength="6" name="pin" id="pin" required><br>
+            <input class="btn btn-default" type="submit" value="submit">
+                </form>
+            {% for message in messages %}
+            {{message}}
+            {% endfor %}
+        </section>
+        <br>
+        <table>
+        <script type="text/javascript" src="{% static 'particles.js' %}"></script>
+        <script type="text/javascript" src="{% static 'app.js'%}"></script>
+        {% if centers %}
+            <tr>
+                <th>Hospital Name</th>
+                <th>Locality</th>
+                <th>City</th>
+            </tr>
+            {% for center in centers %}
+            <tr>
+                <td>{{center.name}}</td>
+                <td>{{center.locality}}</td>
+                <td>{{center.city}}</td>
+            </tr>
+            {% endfor %}
+        {% endif %}
+        </table>
+        <!-- <p style="color: white; font-size: larger;">Get isolated.</p> -->
+    </div>
 </body>
 </html>

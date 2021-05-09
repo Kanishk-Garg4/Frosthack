@@ -14,7 +14,7 @@ class Check(models.Model):
     chest_pain = models.BooleanField(default=False)
     _other_symptoms = models.IntegerField(default=0, db_column='other_symptoms')
     date = models.DateTimeField('date_published')
-    phone = models.IntegerField('phone_number')
+    phone = models.BigIntegerField('phone_number')
 
     @property
     def other_symptoms(self):

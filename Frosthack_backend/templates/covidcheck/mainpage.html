@@ -2,10 +2,17 @@
 {% load static %}
 <html lang="en">
     <head>
+        <style>
+            .ab{
+            font-size : 20px;
+            color: green;
+            }
+        </style>
         <meta charset="utf-8">
         <title>Covid-Response</title>
         <link rel="stylesheet" href="{% static 'main.css' %}">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,400">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     </head>
     <body>
 
@@ -25,7 +32,9 @@
             <!-- <h3 class="tagline">August 24&ndash;26th &mdash; Chicago, IL</h3> -->
             <nav class="nav primary-nav" style="padding-top: 110px;">
                 <ul>
-                    <li>Here reference links will come</li>
+                    <li><a href="https://www.aarogyasetu.gov.in/" style="text-decoration: none;" target="_blank">Aarogya Setu</a></li>
+                    <li><a href="https://www.covid19india.org/" style="text-decoration: none;" target="_blank">Covid Count</a></li>
+                    <li><a href="https://www.mohfw.gov.in/covid_vaccination/vaccination/index.html" style="text-decoration: none;" target="_blank">Vaccine Regisration</a></li>
                 <!-- <li><a href="code.html">Home</a></li><li><a href=""></a></li><li><a href="schedule.html">Schedule</a></li><li><a href="venue.html">Venue</a></li><li><a href="register.html">Register</a></li> -->
                 </ul>
             </nav>
@@ -45,11 +54,25 @@
                 <section class="col-2-3">
                     <h2>Why is there a need to check?</h2>
                     <!-- <h5>$99 per Pass</h5> -->
-                    <p>COVID-19 being one of the most fatal disease in this century, it is essential to checkup regularly and take right decisions at right time.</p>
-                    <p>So, here are we providing you the most suitable advice as per your provided health conditions.</p>
+                    <p style="font-size: 17px;">COVID-19 affects different people in different ways. Most infected people will develop mild to moderate illness and recover without hospitalization.
+                        Advices given are standardised from trusted sources only, and thus preventing people from getting trapped in rumours spread by social media.</p>
+                    <p style="font-size: 17px;">Other Symptons
+
+                        <li>Aches and Pains</li>
+                        <li>Sore throat</li>
+                        <li>Diarrhoea</li>
+                        <li>Conjunctivitis</li>
+                        <li>Headache</li>
+                        <li>Loss of taste or smell</li>
+                    </p>
+                    <p style="font-size: 17px;"> So, here are we providing you the most suitable advice as per your provided health conditions.</p>
                     <h4>How to check?</h4>
                     <ul class="why-attend">
-                        <li>Here all steps will come</li>
+                         <li>Fill out the given form providing the necessary details</li>
+                        <li>Click on Submit button</li>
+                        <li>Follow the instructions to help save yourselves and others</li> 
+                    </ul>
+                    <ul class="why-attend">
                         <!-- <li>One full day of workshops and two full days of presentations</li>
                         <li>Hosted at The Chicago Theatre, a historical landmark</li>
                         <li>August in Chicago is simply amazing</li> -->
@@ -104,9 +127,12 @@
                 <input type="number" name="other_symptoms" id="headache" required pattern="[0-4]{1}" maxlength="1">
                      Phone number
                 <input type="tel" name="phone" id="phone" maxlength="10" pattern="[0-9]{10}" required>
-                <input type="submit" value="submit">
+                <input class="btn" type="submit" value="submit">
                  </form>
-
+                {% for message in messages %}
+                <div class="ab">Congrats! {{message}}</div>
+                <a class="ab" href="https://www.mohfw.gov.in/covid_vaccination/vaccination/index.html">click here to get vaccinated</a>
+                {% endfor %}
             <!-- <label>
             Number of Passes
             <select name="quantity" required>
@@ -125,6 +151,7 @@
             <input class="btn btn-default" type="submit" name="submit" value="Purchase">-->
                 </form>
             </div>
+            </div>
         </section>
 
         <footer class="primary-footer container group">
@@ -132,7 +159,7 @@
             <nav class="nav">
                 <ul>
                     <!-- <li><a href="index.html">Home</a></li><li><a href="speakers.html">Speakers</a></li><li><a href="schedule.html">Schedule</a></li><li><a href="venue.html">Venue</a></li><li><a href="register.html">Register</a></li> -->
-                    <li>Here links will come.</li>
+                    <li><a href="https://github.com/Kanishk-Garg4/Frosthack" target="_blank"><i class="fa fa-github fa-5x"></i></a></li>
                 </ul>
             </nav>
         </footer>

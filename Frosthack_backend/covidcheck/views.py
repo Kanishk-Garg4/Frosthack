@@ -42,19 +42,20 @@ def checkup(request):
             display = "you need to get tested"
             return render(request, 'covidcheck/checkpage.html', {'display': display})
         else:
-            display = "You seem to be fine"
-        return render(request, 'covidcheck/mainpage.html', {'display': display})
+            messages.success(request, 'You seem to be fine')
+        return render(request, 'covidcheck/mainpage.html')
 
     else:
         return render(request, 'covidcheck/mainpage.html')
 
 def askpin(request):
     if request.method == 'POST':
-        pin = request.POST['pin']
-        if 100000 <= pin <= 1000000:
+        pin = int(request.POST['pin'])
+        if pin >= 1000000 or pin < 100000:
+            print(pin)
             messages.error(request, "invalid pin")
-            return render(request, 'covidcheck/checkpage.html', messages)
-        centres = PinCity.objects.filter(pin=pin)
-        return render(request, 'covidcheck/checkpage.html', {'centers': centres})
+            return render(request, 'covidcheck/checkpage.html')
+        centers = PinCity.objects.filter(_pin=pin)
+        return render(request, 'covidcheck/checkpage.html', {'centers': centers})
     else:
         return render(request, 'covidcheck/checkpage.html')
