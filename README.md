@@ -8,6 +8,7 @@ Create a virtual environment to install dependencies in and activate it:
 
 $ virtualenv2 --no-site-packages env
 $ source env/bin/activate
+
 Then install the dependencies:
 
 (env)$ pip install -r requirements.txt
